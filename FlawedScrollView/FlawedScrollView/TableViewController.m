@@ -299,7 +299,6 @@ static NSString * const TableViewCellReuseIdentifier = @"TableViewCellReuseIdent
     return 1;
 }
 
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     TableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:TableViewCellReuseIdentifier forIndexPath:indexPath];
     
@@ -309,7 +308,8 @@ static NSString * const TableViewCellReuseIdentifier = @"TableViewCellReuseIdent
     [cell setImageURL:[self imageURLForRowAtIndexPath:indexPath]];
     [cell setScore:[self scoreForRowAtIndexPath:indexPath]];
     [cell setAuthorAvatarURL:[NSURL URLWithString:@"http://g.fp.ps.netease.com/vchecker/file/56a7197e96dee424bf25d993X4f0plfk"]];
-    
+    cell.layer.shouldRasterize = YES;
+    cell.layer.rasterizationScale = [[UIScreen mainScreen] scale];
     return cell;
 }
 

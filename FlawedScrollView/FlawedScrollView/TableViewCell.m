@@ -139,6 +139,7 @@
 }
 
 - (void)setImageURL:(NSURL *)imageURL {
+    //[self.customImageView setImage:[UIImage imageNamed:@"header"]];
     [self.customImageView sd_setImageWithURL:imageURL];
 }
 
